@@ -10,6 +10,8 @@ export default class Main extends Component {
         this.state = {
             data: []
         }
+
+        this.createNewShape = this.createNewShape.bind(this)
     }
 
     componentDidMount() {
@@ -30,7 +32,8 @@ export default class Main extends Component {
     createNewShape() {
         axios.post('/api').then((res) => [
             this.setState({ data: res.data })
-        ])
+        ]);
+        console.log(this.state.data)
     }
 
     deleteAllShapes() { }
@@ -39,7 +42,7 @@ export default class Main extends Component {
         const { data } = this.state
         return (
             <div className="main">
-                <ControlBoard data={data} />
+                <ControlBoard data={data} createNewShape={this.createNewShape} />
                 <Display data={data} />
             </div>
         )

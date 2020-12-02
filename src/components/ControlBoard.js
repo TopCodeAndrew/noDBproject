@@ -11,7 +11,7 @@ let ControlBoard = (props) => {
 
     return (
         <div className="control-board">
-            <ShapeControl />
+            <ShapeControl createNewShape={props.createNewShape} />
         </div>
     )
 }

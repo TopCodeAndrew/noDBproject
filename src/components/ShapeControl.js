@@ -24,7 +24,9 @@ export default class ShapeControl extends Component {
 
     render() {
         return (
-            <div>this is ShapeControl</div>
+            <div>
+                <button onClick={this.props.createNewShape}>Create new Shape</button>
+            </div>
         )
     }
 }
