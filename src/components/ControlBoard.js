@@ -12,6 +12,7 @@ let ControlBoard = (props) => {
     return (
         <div className="control-board">
             <ShapeControl createNewShape={props.createNewShape} />
+            <button onClick={props.deleteAllShapes}>reset</button>
         </div>
     )
 }

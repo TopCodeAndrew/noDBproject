@@ -12,6 +12,7 @@ export default class Main extends Component {
         }
 
         this.createNewShape = this.createNewShape.bind(this)
+        this.deleteAllShapes = this.deleteAllShapes.bind(this)
     }
 
     componentDidMount() {
@@ -36,13 +37,22 @@ export default class Main extends Component {
         console.log(this.state.data)
     }
 
-    deleteAllShapes() { }
+    deleteAllShapes() {
+        axios.delete('/api').then((res) => {
+            this.setState({
+                data: res.data
+            })
+        })
+    }
 
     render() {
         const { data } = this.state
         return (
             <div className="main">
-                <ControlBoard data={data} createNewShape={this.createNewShape} />
+                <ControlBoard
+                    data={data}
+                    createNewShape={this.createNewShape}
+                    deleteAllShapes={this.deleteAllShapes} />
                 <Display data={data} />
             </div>
         )
