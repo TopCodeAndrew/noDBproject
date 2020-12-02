@@ -5,13 +5,21 @@ let ControlBoard = (props) => {
     const { data } = props;
     const dataMapped = data.map((el) => {
         return (
-            <ShapeControl key={el.id} length={el.length} width={el.width} />
+            <ShapeControl
+                key={el.id}
+                id={el.id}
+                length={el.length}
+                width={el.width}
+                updateShape={props.updateShape} />
         )
     })
 
     return (
         <div className="control-board">
-            <ShapeControl createNewShape={props.createNewShape} />
+            <div>{dataMapped}</div>
+
+            <button onClick={props.createNewShape}>Create new Shape</button>
+
             <button onClick={props.deleteAllShapes}>reset</button>
         </div>
     )

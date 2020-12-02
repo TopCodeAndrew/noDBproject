@@ -24,17 +24,16 @@ export default class Main extends Component {
         })
     }
 
-    // updateShape(width, length, shapeKey) {
-    //     axios.put(`/api/${shapeKey}`).then((res) => {
-
-    //     })
-    // }
+    updateShape(width, length, shapeKey) {
+        axios.put(`/api/${shapeKey}`).then((res) => {
+            console.log(res.data)
+        })
+    }
 
     createNewShape() {
-        axios.post('/api').then((res) => [
+        axios.post('/api').then((res) => {
             this.setState({ data: res.data })
-        ]);
-        console.log(this.state.data)
+        });
     }
 
     deleteAllShapes() {
@@ -52,7 +51,8 @@ export default class Main extends Component {
                 <ControlBoard
                     data={data}
                     createNewShape={this.createNewShape}
-                    deleteAllShapes={this.deleteAllShapes} />
+                    deleteAllShapes={this.deleteAllShapes}
+                    updateShape={this.updateShape} />
                 <Display data={data} />
             </div>
         )

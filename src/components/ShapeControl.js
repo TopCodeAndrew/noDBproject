@@ -8,12 +8,14 @@ export default class ShapeControl extends Component {
             widthInput: 0,
             lengthInput: 0
         }
+
+        this.handleWidthChange = this.handleWidthChange.bind(this)
     }
 
     handleWidthChange(val) {
         this.setState({
             widthInput: val
-        })
+        });
     }
 
     handleLengthChange(val) {
@@ -23,9 +25,17 @@ export default class ShapeControl extends Component {
     }
 
     render() {
+        const { widthInput, lengthInput } = this.state
+        const { id } = this.props
         return (
             <div>
-                <button onClick={this.props.createNewShape}>Create new Shape</button>
+                <p>Width</p>
+                {/* <input onChange={(e) => this.handleWidthChange(e.target.value)} /> */}
+
+                <button onClick={this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
+
+
+
             </div>
         )
     }
