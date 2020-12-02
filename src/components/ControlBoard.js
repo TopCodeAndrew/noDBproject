@@ -10,7 +10,6 @@ let ControlBoard = (props) => {
                 id={el.id}
                 length={el.length}
                 width={el.width}
-                length={el.width}
                 updateShape={props.updateShape} />
         )
     })
