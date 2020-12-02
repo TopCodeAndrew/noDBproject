@@ -3,10 +3,14 @@ import DisplayedShape from './DisplayedShape'
 
 let Display = (props) => {
     const { data } = props;
+    const dataMapped = data.map((el) => {
+        return (
+            <DisplayedShape key={el.id} length={el.length} width={el.width} />
+        )
+    })
     return (
         <div className="display">
-            <div>{data} in Display</div>
-            <DisplayedShape data={data} />
+            <div>{dataMapped}</div>
         </div>
     )
 }

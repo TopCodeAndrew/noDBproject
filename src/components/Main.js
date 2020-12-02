@@ -8,7 +8,7 @@ export default class Main extends Component {
         super();
 
         this.state = {
-            data: ["this is state"]
+            data: []
         }
     }
 
