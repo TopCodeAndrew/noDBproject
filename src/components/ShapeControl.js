@@ -30,9 +30,9 @@ export default class ShapeControl extends Component {
         return (
             <div>
                 <p>Width</p>
-                {/* <input onChange={(e) => this.handleWidthChange(e.target.value)} /> */}
+                <input onChange={(e) => this.handleWidthChange(e.target.value)} />
 
-                <button onClick={this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
+                <button onClick={() => this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
 
 
 

@@ -19,8 +19,8 @@ module.exports = {
         const { shapeWidth, shapeLength } = req.body
 
         let index = shapes.findIndex((e) => e.id === +shape_key)
-        shapes[index].width = shapeWidth || shapes[index].width
-        shapes[index].length = shapeLength || shapes[index].length
+        shapes[index].width = +shapeWidth || shapes[index].width
+        shapes[index].length = +shapeLength || shapes[index].length
 
         res.status(200).send(shapes)
 

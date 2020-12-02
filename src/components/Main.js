@@ -13,6 +13,7 @@ export default class Main extends Component {
 
         this.createNewShape = this.createNewShape.bind(this)
         this.deleteAllShapes = this.deleteAllShapes.bind(this)
+        this.updateShape = this.updateShape.bind(this)
     }
 
     componentDidMount() {
@@ -25,9 +26,13 @@ export default class Main extends Component {
     }
 
     updateShape(width, length, shapeKey) {
-        axios.put(`/api/${shapeKey}`).then((res) => {
-            console.log(res.data)
+        axios.put(`/api/${shapeKey}`, { "shapeWidth": width, "shapeLength": length }).then((res) => {
+            this.setState({
+                data: res.data
+
+            })
         })
+        console.log(this.state.data)
     }
 
     createNewShape() {
