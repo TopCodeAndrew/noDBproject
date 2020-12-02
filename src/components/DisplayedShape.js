@@ -1,9 +1,11 @@
 import React from 'react'
 
 let DisplayedShape = (props) => {
-    const { data } = props;
+    const { length, width } = props;
     return (
-        <div style></div>
+        <div >
+            <div style={{ backgroundColor: "black", height: length, width: width }} ></div>
+        </div>
     )
 }
 

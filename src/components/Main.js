@@ -8,18 +8,23 @@ export default class Main extends Component {
         super();
 
         this.state = {
-            data: []
+            data: [{
+                id: 0,
+                width: 10,
+                length: 10
+            }]
         }
     }
 
-    componentDidMount() {
-        axios.get('/api').then((res) => {
-            this.setState({
-                data: res.data
+    // componentDidMount() {
+    //     axios.get('/api').then((res) => {
+    //         console.log(res.data);
+    //         this.setState({
+    //             data: res.data
 
-            })
-        })
-    }
+    //         })
+    //     })
+    // }
 
     updateShape(width, length, shapeKey) { }
 
