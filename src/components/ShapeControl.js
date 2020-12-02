@@ -29,12 +29,14 @@ export default class ShapeControl extends Component {
         const { id } = this.props
         return (
             <div>
-                <p>Width</p>
-                <input onChange={(e) => this.handleWidthChange(e.target.value)} />
+                <p>Width:
+                    <input onChange={(e) => this.handleWidthChange(e.target.value)} />
+                </p>
+                <p>Length:
+                    <input onChange={(e) => this.handleLengthChange(e.target.value)} />
+                </p>
 
                 <button onClick={() => this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
-
-
 
             </div>
         )
