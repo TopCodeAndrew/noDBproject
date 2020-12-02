@@ -21,9 +21,17 @@ export default class Main extends Component {
         })
     }
 
-    updateShape(width, length, shapeKey) { }
+    // updateShape(width, length, shapeKey) {
+    //     axios.put(`/api/${shapeKey}`).then((res) => {
 
-    createNewShape() { }
+    //     })
+    // }
+
+    createNewShape() {
+        axios.post('/api').then((res) => [
+            this.setState({ data: res.data })
+        ])
+    }
 
     deleteAllShapes() { }
 
