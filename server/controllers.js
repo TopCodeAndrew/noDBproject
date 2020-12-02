@@ -3,9 +3,9 @@ let shapes = [
         id: 0,
         width: 50,
         length: 50,
-    },
-
+    }
 ]
+
 let shapesId = 1
 
 module.exports = {
