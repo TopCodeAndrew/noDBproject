@@ -7,10 +7,11 @@ app.use(express.json())
 
 
 // This is the ComponentDidMount endpoint
-app.get('/api', controllers.sendShapes)
-app.put('/api/:shape_key', controllers.updateSpecificShape)
-app.post('/api', controllers.createShape)
-app.delete('/api', controllers.totalReset)
+app.get('/api/shapes', controllers.sendShapes)
+app.put('/api/shapes/individual:shape_key', controllers.updateSpecificShape)
+app.delete('/api/shapes/individual', controllers.deleteOneShape)
+app.post('/api/shapes/individual', controllers.createShape)
+app.delete('/api/shapes', controllers.totalReset)
 
 
 

@@ -13,11 +13,12 @@ export default class Main extends Component {
 
         this.createNewShape = this.createNewShape.bind(this)
         this.deleteAllShapes = this.deleteAllShapes.bind(this)
+        this.deleteOneShape = this.deleteOneShape.bind(this)
         this.updateShape = this.updateShape.bind(this)
     }
 
     componentDidMount() {
-        axios.get('/api').then((res) => {
+        axios.get('/api/shapes').then((res) => {
             this.setState({
                 data: res.data
 
@@ -26,7 +27,7 @@ export default class Main extends Component {
     }
 
     updateShape(width, length, shapeKey, color) {
-        axios.put(`/api/${shapeKey}?shapeColor=${color}`, { "shapeWidth": width, "shapeLength": length }).then((res) => {
+        axios.put(`/api/shapes/individual${shapeKey}?shapeColor=${color}`, { "shapeWidth": width, "shapeLength": length }).then((res) => {
             this.setState({
                 data: res.data
 
@@ -35,13 +36,21 @@ export default class Main extends Component {
     }
 
     createNewShape() {
-        axios.post('/api').then((res) => {
+        axios.post('/api/shapes/individual').then((res) => {
             this.setState({ data: res.data })
         });
     }
 
+    deleteOneShape(key) {
+        axios.delete(`/api/shapes/individual?id=${key}`).then((res) => {
+            this.setState({
+                data: res.data
+            })
+        })
+    }
+
     deleteAllShapes() {
-        axios.delete('/api').then((res) => {
+        axios.delete('/api/shapes').then((res) => {
             this.setState({
                 data: res.data
             })
@@ -55,6 +64,7 @@ export default class Main extends Component {
                 <ControlBoard
                     data={data}
                     createNewShape={this.createNewShape}
+                    deleteOneShape={this.deleteOneShape}
                     deleteAllShapes={this.deleteAllShapes}
                     updateShape={this.updateShape} />
                 <Display data={data} />

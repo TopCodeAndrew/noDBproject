@@ -1,3 +1,4 @@
+
 let shapes = [
     {
         id: 0,
@@ -6,6 +7,7 @@ let shapes = [
         color: "green"
     }
 ]
+
 
 let shapesId = 1
 
@@ -33,6 +35,16 @@ module.exports = {
 
     },
 
+    deleteOneShape: (req, res) => {
+        const { id } = req.query
+        const index = shapes.findIndex((e) => e.id === +id)
+        shapes.splice(index, 1)
+        console.log(shapes)
+        res.status(200).send(shapes)
+
+
+    },
+
     createShape: (req, res) => {
 
         let randomOne = Math.floor(Math.random() * 300) + 10
@@ -45,12 +57,19 @@ module.exports = {
 
             let selectColor = colorArray[randomIndex]
 
-            console.log(selectColor)
-
             return selectColor
         }
 
         let newColor = randomColor()
+
+        let diagnoseEmptyList = () => {
+            let allIsWell = shapesId
+            if (shapes.length === 0) {
+                return 0
+            } else { return allIsWell }
+        }
+
+        shapesId = diagnoseEmptyList()
 
         let newShape = {
             id: shapesId,
@@ -59,9 +78,9 @@ module.exports = {
             color: newColor
         }
 
-        console.log(randomOne, randomTwo, randomColor)
         shapes.push(newShape)
         shapesId++
+        console.log(shapes)
         res.status(200).send(shapes)
     },
 
@@ -73,10 +92,12 @@ module.exports = {
                 length: 150,
                 color: "green"
             }
-        ]
+        ];
 
         shapesId = 1
+        console.log(shapes)
         res.status(200).send(shapes)
+
     }
 
 }

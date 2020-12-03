@@ -33,9 +33,9 @@ export default class ShapeControl extends Component {
 
     render() {
         const { widthInput, lengthInput, colorInput } = this.state
-        const { id, color } = this.props
+        const { id, color, updateShape, deleteOneShape } = this.props
         return (
-            <div className="shape-control" style={{ boxShadow: `0px 0px 50px 0px ${color}` }}>
+            <div className="shape-control" style={{ boxShadow: `0px 0px 30px 15px ${color}` }}>
                 <header>Shape #{id + 1}</header>
                 <nav className='content'>
                     <p className='word'>Width:</p>
@@ -48,10 +48,14 @@ export default class ShapeControl extends Component {
                 <nav className='content'>
                     <p className='word'>Color:</p>
                     <input placeholder='type here' onChange={(e) => this.handleColorChange(e.target.value)} />
-                    <button onClick={() => console.log(this.state.colorInput)} />
                 </nav>
 
-                <button className='content button' onClick={() => this.props.updateShape(widthInput, lengthInput, id, colorInput)}>UpdateShape</button>
+                <div className='button-box'>
+                    <button className='content button' onClick={() => updateShape(widthInput, lengthInput, id, colorInput)}>Update</button>
+
+                    <button className='content button' onClick={() => deleteOneShape(id)}>Delete</button>
+                </div>
+
 
             </div>
         )

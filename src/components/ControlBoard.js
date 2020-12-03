@@ -11,7 +11,8 @@ let ControlBoard = (props) => {
                 length={el.length}
                 width={el.width}
                 color={el.color}
-                updateShape={props.updateShape} />
+                updateShape={props.updateShape}
+                deleteOneShape={props.deleteOneShape} />
         )
     })
 
@@ -21,7 +22,7 @@ let ControlBoard = (props) => {
 
             <nav className="create-reset">
                 <button onClick={props.createNewShape}>Create new Shape</button>
-                <button onClick={props.deleteAllShapes}>reset</button>
+                <button onClick={props.deleteAllShapes}>Reset to Original</button>
             </nav>
         </span>
     )

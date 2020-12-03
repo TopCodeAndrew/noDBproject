@@ -31,7 +31,7 @@
 
 .shape-control{
   width: 20vw;
-  margin-top: 20px;
+  margin-top: 40px;
   background-color: white;
   box-sizing: border-box;
   padding: 0px;
@@ -52,8 +52,17 @@
   margin-right: 5px;
 }
 
+.button-box{
+  display: flex;
+  width: 15vw;
+  justify-content: space-around;
+
+}
+
 .button {
-  margin-top: 30px;
+  margin-top: 0px;
+  width: 7vw;
+  justify-content: space-around;
 }
 
 .create-reset {
@@ -86,6 +95,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 68px;
   margin-bottom: 30px;
 }
