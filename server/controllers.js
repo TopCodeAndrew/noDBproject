@@ -3,7 +3,7 @@ let shapes = [
         id: 0,
         width: 200,
         length: 200,
-        color: "red"
+        color: "green"
     }
 ]
 
@@ -34,12 +34,18 @@ module.exports = {
     },
 
     createShape: (req, res) => {
+
+        let randomOne = Math.floor(Math.random() * 400) + 50
+        let randomTwo = Math.floor(Math.random() * 400) + 50
+
         let newShape = {
             id: shapesId,
-            width: 200,
-            length: 200,
-            color: "red"
+            width: randomOne,
+            length: randomTwo,
+            color: "yellow"
         }
+
+        console.log(randomOne, randomTwo)
         shapes.push(newShape)
         shapesId++
         res.status(200).send(shapes)
@@ -49,8 +55,9 @@ module.exports = {
         shapes = [
             {
                 id: 0,
-                width: 50,
-                length: 50,
+                width: 200,
+                length: 200,
+                color: "yellow"
             }
         ]
 

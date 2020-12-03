@@ -10,6 +10,7 @@ let ControlBoard = (props) => {
                 id={el.id}
                 length={el.length}
                 width={el.width}
+                color={el.color}
                 updateShape={props.updateShape} />
         )
     })
@@ -18,9 +19,10 @@ let ControlBoard = (props) => {
         <span className="control-board">
             <div>{dataMapped}</div>
 
-            <button onClick={props.createNewShape}>Create new Shape</button>
-
-            <button onClick={props.deleteAllShapes}>reset</button>
+            <nav className="create-reset">
+                <button onClick={props.createNewShape}>Create new Shape</button>
+                <button onClick={props.deleteAllShapes}>reset</button>
+            </nav>
         </span>
     )
 }

@@ -33,9 +33,9 @@ export default class ShapeControl extends Component {
 
     render() {
         const { widthInput, lengthInput, colorInput } = this.state
-        const { id } = this.props
+        const { id, color } = this.props
         return (
-            <div className="shape-control">
+            <div className="shape-control" style={{ boxShadow: `0px 0px 50px 0px ${color}` }}>
                 <header>Shape #{id + 1}</header>
                 <nav className='content'>
                     <p className='word'>Width:</p>
