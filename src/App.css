@@ -2,14 +2,14 @@
   width: 99vw;
   height: 5vh;
   background-color: rgb(141, 141, 141);
-  margin: 0;
   display: flex;
   align-items: center;
   border-bottom: solid yellow 6px;
 }
 
 .header-title {
-  margin-left: 20px;
+  margin: 5px;
+  margin-left: 50px;
   color: white;
   font-size: 25px;
 }
@@ -21,7 +21,7 @@
 .control-board{
   background-color: rgb(97, 97, 97);
   width: 30vw;
-  border-right: solid white 10px;
+  border-right: solid #ffffff 10px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -63,6 +63,12 @@
   margin-top: 0px;
   width: 7vw;
   justify-content: space-around;
+  color: black;
+} 
+
+.button:hover{
+  background-color: black;
+  color: white;
 }
 
 .create-reset {
@@ -92,9 +98,13 @@
 }
 
 .displayed-shape {
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 68px;
   margin-bottom: 30px;
+}
+
+.displayed-shape:hover {
+  position: relative;
+  left: .5vw;
 }
