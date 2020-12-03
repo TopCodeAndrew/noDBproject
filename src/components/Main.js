@@ -60,20 +60,8 @@ export default class Main extends Component {
             .catch(error => {
                 console.log(error)
             })
-        console.log(shapeNumber)
     }
 
-    displayForm() {
-        return (
-            <form>
-                <label>
-                    Name:
-    <input type="text" name="name" />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-        )
-    }
 
     nameCheck(id) {
         let prompt = window.prompt("Name this shape:", "")
@@ -84,6 +72,9 @@ export default class Main extends Component {
                 data: res.data
             })
         })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     changeColorToYellow(key) {
@@ -92,7 +83,9 @@ export default class Main extends Component {
                 data: res.data
             })
         })
-
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     deleteAllShapes() {
