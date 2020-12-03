@@ -6,7 +6,8 @@ export default class ShapeControl extends Component {
 
         this.state = {
             widthInput: 0,
-            lengthInput: 0
+            lengthInput: 0,
+            colorInput: ''
         }
 
         this.handleWidthChange = this.handleWidthChange.bind(this)
@@ -24,21 +25,33 @@ export default class ShapeControl extends Component {
         })
     }
 
+    handleColorChange(val) {
+        this.setState({
+            colorInput: val
+        })
+    }
+
     render() {
         const { widthInput, lengthInput } = this.state
         const { id } = this.props
         return (
-            <div
-                className="shape-control">
-                <header>Shape #{id}</header>
-                <nav>Width:
-                    <input onChange={(e) => this.handleWidthChange(e.target.value)} />
+            <div className="shape-control">
+                <header>Shape #{id + 1}</header>
+                <nav className='content'>
+                    <p className='word'>Width:</p>
+                    <input placeholder='type here' onChange={(e) => this.handleWidthChange(e.target.value)} />
                 </nav>
-                <nav>Length:
-                    <input onChange={(e) => this.handleLengthChange(e.target.value)} />
+                <nav className='content'>
+                    <p className='word'>Length:</p>
+                    <input placeholder='type here' onChange={(e) => this.handleLengthChange(e.target.value)} />
+                </nav>
+                <nav className='content'>
+                    <p className='word'>Color:</p>
+                    <input placeholder='type here' onChange={(e) => this.handleColorChange(e.target.value)} />
+                    <button onClick={() => console.log(this.state.colorInput)} />
                 </nav>
 
-                <button onClick={() => this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
+                <button className='content button' onClick={() => this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
 
             </div>
         )

@@ -26,9 +26,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .shape-control{
+  width: 80%;
   margin: 30px;
   background-color: white;
   box-sizing: border-box;
@@ -37,21 +39,37 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 
 }
 
+.content{
+  margin: 8px;
+  display: flex
+}
+
+.word {
+  margin-right: 5px;
+}
+
+.button {
+  margin-top: 30px;
+}
 
 
 .display {
   min-height: 100vh;
-  width: 70vw;
+  min-width: 70vw;
   background-color: rgb(205, 214, 214);
   display: flex;
   justify-content: center;
+  box-sizing: content-box;
+  padding: 1px;
 }
 
 .displayed-shape {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 5px;
 }
