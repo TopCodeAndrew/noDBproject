@@ -16,6 +16,7 @@ export default class Main extends Component {
         this.deleteOneShape = this.deleteOneShape.bind(this)
         this.updateShape = this.updateShape.bind(this)
         this.changeColorToYellow = this.changeColorToYellow.bind(this)
+        this.nameCheck = this.nameCheck.bind(this)
     }
 
     componentDidMount() {
@@ -78,12 +79,11 @@ export default class Main extends Component {
         let prompt = window.prompt("Name this shape:", "")
         let promptResponse = prompt
 
-        axios.put('/api/shapes/nameindividual', { "shape_key": id, "promptResponse": promptResponse })
-            .then((res) => {
-                this.setState({
-                    data: res.data
-                })
+        axios.put('/api/shapes/nameindividual', { "shape_key": id, "promptResponse": promptResponse }).then((res) => {
+            this.setState({
+                data: res.data
             })
+        })
     }
 
     changeColorToYellow(key) {
