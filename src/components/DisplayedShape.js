@@ -1,12 +1,13 @@
 import React from 'react'
 
 let DisplayedShape = (props) => {
-    const { length, width, color, name } = props;
+    const { length, width, color, name, id, nameCheck } = props;
     return (
         <div className="displayed-shape">
+
             <p>{name} </p>
             <div
-                onClick={() => console.log(name)}
+                onClick={() => nameCheck(id)}
                 style={{
                     backgroundColor: color,
                     height: length,

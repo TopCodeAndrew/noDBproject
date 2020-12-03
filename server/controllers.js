@@ -47,6 +47,13 @@ module.exports = {
 
     },
 
+    nameIndividual: (req, res) => {
+        let { shape_key, promptResponse } = req.body
+        let index = shapes.findIndex((e) => e.id === +shape_key)
+        shapes[index].name = promptResponse || shapes[index].name
+        res.status(200).send(shapes)
+    },
+
     createShape: (req, res) => {
 
         let randomOne = Math.floor(Math.random() * 300) + 10

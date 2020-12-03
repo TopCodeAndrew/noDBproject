@@ -66,10 +66,10 @@
   color: black;
 } 
 
-/* .button:hover{
-  background-color: black;
+.button:hover{
+  background-color: red;
   color: white;
-} */
+}
 
 .create-reset {
   z-index: 1;

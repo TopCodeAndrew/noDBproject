@@ -15,6 +15,7 @@ export default class Main extends Component {
         this.deleteAllShapes = this.deleteAllShapes.bind(this)
         this.deleteOneShape = this.deleteOneShape.bind(this)
         this.updateShape = this.updateShape.bind(this)
+        this.nameCheck = this.nameCheck.bind(this)
     }
 
     componentDidMount() {
@@ -61,6 +62,30 @@ export default class Main extends Component {
         console.log(shapeNumber)
     }
 
+    displayForm() {
+        return (
+            <form>
+                <label>
+                    Name:
+    <input type="text" name="name" />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        )
+    }
+
+    nameCheck(id) {
+        let prompt = window.prompt("Name this shape:", "")
+        let promptResponse = prompt
+
+        axios.put('/api/shapes/nameindividual', { "shape_key": id, "promptResponse": promptResponse })
+            .then((res) => {
+                this.setState({
+                    data: res.data
+                })
+            })
+    }
+
     deleteAllShapes() {
         axios.delete('/api/shapes').then((res) => {
             this.setState({
@@ -82,7 +107,9 @@ export default class Main extends Component {
                     deleteOneShape={this.deleteOneShape}
                     deleteAllShapes={this.deleteAllShapes}
                     updateShape={this.updateShape} />
-                <Display data={data} />
+                <Display
+                    data={data}
+                    nameCheck={this.nameCheck} />
             </div>
         )
     }

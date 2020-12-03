@@ -11,6 +11,7 @@ app.use(express.json())
 app.get('/api/shapes', controllers.sendShapes)
 app.put('/api/shapes/individual:shape_key', controllers.updateSpecificShape)
 app.delete('/api/shapes/individual:shape_number', controllers.deleteOneShape)
+app.put('/api/shapes/nameindividual', controllers.nameIndividual)
 app.post('/api/shapes/individual', controllers.createShape)
 app.delete('/api/shapes', controllers.totalReset)
 
