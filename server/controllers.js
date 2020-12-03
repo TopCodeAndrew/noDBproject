@@ -38,14 +38,28 @@ module.exports = {
         let randomOne = Math.floor(Math.random() * 400) + 50
         let randomTwo = Math.floor(Math.random() * 400) + 50
 
+        let randomColor = () => {
+            let colorArray = [null, "red", "blue", "green", "yellow", "purple", "cyan", "pink", "orange", "greenyellow", "aqua", "brown", "coral", "firebrick", "hotpink", "indianred"]
+
+            const randomIndex = Math.floor(Math.random() * (colorArray.length - 1)) + 1;
+
+            let selectColor = colorArray[randomIndex]
+
+            console.log(selectColor)
+
+            return selectColor
+        }
+
+        let newColor = randomColor()
+
         let newShape = {
             id: shapesId,
             width: randomOne,
             length: randomTwo,
-            color: "yellow"
+            color: newColor
         }
 
-        console.log(randomOne, randomTwo)
+        console.log(randomOne, randomTwo, randomColor)
         shapes.push(newShape)
         shapesId++
         res.status(200).send(shapes)
