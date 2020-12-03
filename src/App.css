@@ -72,6 +72,7 @@
 }
 
 .create-reset {
+  z-index: 1;
   width: 35vw;
   height: 50px;
   position: fixed;
