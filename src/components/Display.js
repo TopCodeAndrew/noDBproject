@@ -9,9 +9,9 @@ let Display = (props) => {
         )
     })
     return (
-        <div className="display">
+        <span className="display">
             <div>{dataMapped}</div>
-        </div>
+        </span>
     )
 }
 

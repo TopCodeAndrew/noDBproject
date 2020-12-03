@@ -15,13 +15,13 @@ let ControlBoard = (props) => {
     })
 
     return (
-        <div className="control-board">
+        <span className="control-board">
             <div>{dataMapped}</div>
 
             <button onClick={props.createNewShape}>Create new Shape</button>
 
             <button onClick={props.deleteAllShapes}>reset</button>
-        </div>
+        </span>
     )
 }
 

@@ -22,8 +22,25 @@
   background-color: rgb(97, 97, 97);
   width: 30vw;
   border-right: solid white 10px;
-  color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.shape-control{
+  margin: 30px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
 
 .display {
   min-height: 100vh;
