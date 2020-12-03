@@ -1,8 +1,8 @@
 let shapes = [
     {
         id: 0,
-        width: 200,
-        length: 200,
+        width: 150,
+        length: 150,
         color: "green"
     }
 ]
@@ -69,9 +69,9 @@ module.exports = {
         shapes = [
             {
                 id: 0,
-                width: 200,
-                length: 200,
-                color: "yellow"
+                width: 150,
+                length: 150,
+                color: "green"
             }
         ]
 
