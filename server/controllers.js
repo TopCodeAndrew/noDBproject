@@ -37,9 +37,10 @@ module.exports = {
 
     deleteOneShape: (req, res) => {
         const { id } = req.query
+        const { shape_number } = req.params
         const index = shapes.findIndex((e) => e.id === +id)
         shapes.splice(index, 1)
-        console.log(shapes)
+        console.log(`Internal Use: Shape #${shape_number} with an id of "${id}" deleted!`)
         res.status(200).send(shapes)
 
 

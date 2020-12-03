@@ -24,6 +24,9 @@ export default class Main extends Component {
 
             })
         })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     updateShape(width, length, shapeKey, color) {
@@ -32,21 +35,30 @@ export default class Main extends Component {
                 data: res.data
 
             })
+        }).catch(error => {
+            console.log(error)
         })
     }
 
     createNewShape() {
         axios.post('/api/shapes/individual').then((res) => {
             this.setState({ data: res.data })
-        });
+        })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
-    deleteOneShape(key) {
-        axios.delete(`/api/shapes/individual?id=${key}`).then((res) => {
+    deleteOneShape(id, shapeNumber) {
+        axios.delete(`/api/shapes/individual${shapeNumber}?id=${id}`).then((res) => {
             this.setState({
                 data: res.data
             })
         })
+            .catch(error => {
+                console.log(error)
+            })
+        console.log(shapeNumber)
     }
 
     deleteAllShapes() {
@@ -55,6 +67,9 @@ export default class Main extends Component {
                 data: res.data
             })
         })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     render() {

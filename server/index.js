@@ -6,10 +6,11 @@ const controllers = require('./controllers')
 app.use(express.json())
 
 
+
 // This is the ComponentDidMount endpoint
 app.get('/api/shapes', controllers.sendShapes)
 app.put('/api/shapes/individual:shape_key', controllers.updateSpecificShape)
-app.delete('/api/shapes/individual', controllers.deleteOneShape)
+app.delete('/api/shapes/individual:shape_number', controllers.deleteOneShape)
 app.post('/api/shapes/individual', controllers.createShape)
 app.delete('/api/shapes', controllers.totalReset)
 

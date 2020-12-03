@@ -34,9 +34,10 @@ export default class ShapeControl extends Component {
     render() {
         const { widthInput, lengthInput, colorInput } = this.state
         const { id, color, updateShape, deleteOneShape } = this.props
+        const shapeNumber = id + 1
         return (
             <div className="shape-control" style={{ boxShadow: `0px 0px 30px 15px ${color}` }}>
-                <header>Shape #{id + 1}</header>
+                <header>Shape #{shapeNumber}</header>
                 <nav className='content'>
                     <p className='word'>Width:</p>
                     <input placeholder='type here' onChange={(e) => this.handleWidthChange(e.target.value)} />
@@ -53,7 +54,7 @@ export default class ShapeControl extends Component {
                 <div className='button-box'>
                     <button className='content button' onClick={() => updateShape(widthInput, lengthInput, id, colorInput)}>Update</button>
 
-                    <button className='content button' onClick={() => deleteOneShape(id)}>Delete</button>
+                    <button className='content button' onClick={() => deleteOneShape(id, shapeNumber)}>Delete</button>
                 </div>
 
 
