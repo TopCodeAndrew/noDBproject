@@ -35,8 +35,8 @@ module.exports = {
 
     createShape: (req, res) => {
 
-        let randomOne = Math.floor(Math.random() * 400) + 50
-        let randomTwo = Math.floor(Math.random() * 400) + 50
+        let randomOne = Math.floor(Math.random() * 300) + 10
+        let randomTwo = Math.floor(Math.random() * 300) + 10
 
         let randomColor = () => {
             let colorArray = [null, "red", "blue", "green", "yellow", "purple", "cyan", "pink", "orange", "greenyellow", "aqua", "brown", "coral", "firebrick", "hotpink", "indianred"]
