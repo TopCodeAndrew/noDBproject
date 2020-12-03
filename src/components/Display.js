@@ -2,7 +2,7 @@ import React from 'react'
 import DisplayedShape from './DisplayedShape'
 
 let Display = (props) => {
-    const { data, nameCheck } = props;
+    const { data, nameCheck, changeColorToYellow } = props;
     const dataMapped = data.map((el) => {
         return (
             <DisplayedShape
@@ -12,7 +12,8 @@ let Display = (props) => {
                 width={el.width}
                 color={el.color}
                 name={el.name}
-                nameCheck={nameCheck} />
+                nameCheck={nameCheck}
+                changeColorToYellow={changeColorToYellow} />
         )
     })
     return (

@@ -15,7 +15,7 @@ export default class Main extends Component {
         this.deleteAllShapes = this.deleteAllShapes.bind(this)
         this.deleteOneShape = this.deleteOneShape.bind(this)
         this.updateShape = this.updateShape.bind(this)
-        this.nameCheck = this.nameCheck.bind(this)
+        this.changeColorToYellow = this.changeColorToYellow.bind(this)
     }
 
     componentDidMount() {
@@ -86,6 +86,15 @@ export default class Main extends Component {
             })
     }
 
+    changeColorToYellow(key) {
+        axios.put(`/api/shapes/change-color`, { "shape_key": key }).then((res) => {
+            this.setState({
+                data: res.data
+            })
+        })
+
+    }
+
     deleteAllShapes() {
         axios.delete('/api/shapes').then((res) => {
             this.setState({
@@ -109,7 +118,8 @@ export default class Main extends Component {
                     updateShape={this.updateShape} />
                 <Display
                     data={data}
-                    nameCheck={this.nameCheck} />
+                    nameCheck={this.nameCheck}
+                    changeColorToYellow={this.changeColorToYellow} />
             </div>
         )
     }

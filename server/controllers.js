@@ -106,6 +106,23 @@ module.exports = {
         shapesId = 1
         res.status(200).send(shapes)
 
+    },
+
+    redOverRide: (req, res) => {
+
+        const { shape_key } = req.body
+
+        let index = shapes.findIndex((e) => e.id === +shape_key)
+        console.log('got to redOverRide', index)
+
+
+        shapes[index].color = "yellow"
+
+        res.status(200).send(shapes)
+
     }
+
+
+
 
 }
