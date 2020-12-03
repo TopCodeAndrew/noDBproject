@@ -89,7 +89,6 @@ module.exports = {
 
         shapes.push(newShape)
         shapesId++
-        console.log(shapes)
         res.status(200).send(shapes)
     },
 
@@ -105,7 +104,6 @@ module.exports = {
         ];
 
         shapesId = 1
-        console.log(shapes)
         res.status(200).send(shapes)
 
     }
