@@ -66,10 +66,10 @@
   color: black;
 } 
 
-.button:hover{
+/* .button:hover{
   background-color: black;
   color: white;
-}
+} */
 
 .create-reset {
   z-index: 1;
@@ -100,9 +100,12 @@
 
 .displayed-shape {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 68px;
   margin-bottom: 30px;
+  font-size: 25px;
 }
 
 .displayed-shape:hover {

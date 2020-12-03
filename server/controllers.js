@@ -92,7 +92,8 @@ module.exports = {
                 id: 0,
                 width: 150,
                 length: 150,
-                color: "green"
+                color: "green",
+                name: "Lil Green"
             }
         ];
 
