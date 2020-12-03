@@ -32,7 +32,7 @@ export default class ShapeControl extends Component {
     }
 
     render() {
-        const { widthInput, lengthInput } = this.state
+        const { widthInput, lengthInput, colorInput } = this.state
         const { id } = this.props
         return (
             <div className="shape-control">
@@ -51,7 +51,7 @@ export default class ShapeControl extends Component {
                     <button onClick={() => console.log(this.state.colorInput)} />
                 </nav>
 
-                <button className='content button' onClick={() => this.props.updateShape(widthInput, lengthInput, id)}>UpdateShape</button>
+                <button className='content button' onClick={() => this.props.updateShape(widthInput, lengthInput, id, colorInput)}>UpdateShape</button>
 
             </div>
         )

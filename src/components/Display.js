@@ -5,7 +5,7 @@ let Display = (props) => {
     const { data } = props;
     const dataMapped = data.map((el) => {
         return (
-            <DisplayedShape key={el.id} length={el.length} width={el.width} />
+            <DisplayedShape key={el.id} length={el.length} width={el.width} color={el.color} />
         )
     })
     return (

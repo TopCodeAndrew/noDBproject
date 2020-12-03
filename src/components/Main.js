@@ -25,14 +25,13 @@ export default class Main extends Component {
         })
     }
 
-    updateShape(width, length, shapeKey) {
-        axios.put(`/api/${shapeKey}`, { "shapeWidth": width, "shapeLength": length }).then((res) => {
+    updateShape(width, length, shapeKey, color) {
+        axios.put(`/api/${shapeKey}?shapeColor=${color}`, { "shapeWidth": width, "shapeLength": length }).then((res) => {
             this.setState({
                 data: res.data
 
             })
         })
-        console.log(this.state.data)
     }
 
     createNewShape() {
